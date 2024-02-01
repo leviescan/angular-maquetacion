@@ -1,0 +1,41 @@
+li{
+    margin: 50px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.img {
+    position: relative;
+}
+
+.boton{
+    position: absolute;
+    right: 18rem;
+    top: 12rem;
+    width: 20rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: transparent;
+}
+
+.boton2{
+    position: absolute;
+    right: 8.5rem;
+    top: 20.5rem;
+    width: 10rem;
+    height: 3rem;
+    background-color: rgba(36, 35, 35, 0);
+    border-color: transparent;
+}
+
+.label2{
+    position: absolute;
+    right: 8.5rem;
+    top: 17rem;
+    width: 10rem;
+    height: 2.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    border-color: transparent;
+}

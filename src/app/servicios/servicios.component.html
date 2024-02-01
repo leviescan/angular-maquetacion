@@ -1,0 +1,92 @@
+<style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .service-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card {
+      margin-bottom: 20px;
+    }
+  </style>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light " >
+      <div class="container">
+        <!-- Logo a la izquierda -->
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/p1.png" alt="Logo" width="100" height="100">
+        </a>
+    
+        <!-- Botón de hamburguesa para dispositivos móviles -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Menú de navegación -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  routerLink="/productos">Producto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  routerLink="/contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+    
+        <!-- Imagen de carrito de compras al final -->
+        <div class="navbar-text">
+          <img src="assets/images/p2.png" routerLink="/car" alt="Carrito de compras" width="70" height="70">
+        </div>
+      </div>
+    </nav>
+  <title>Servicios eCommerce</title>
+
+
+<div class="container service-container">
+  <h2 class="text-center mb-4">Nuestros Servicios</h2>
+
+  <div class="card-deck">
+    <div class="card service-card">
+      <img src="servicio1.jpg" class="card-img-top" alt="Servicio 1">
+      <div class="card-body">
+        <h5 class="card-title">Servicio 1</h5>
+        <p class="card-text">Descripción del Servicio 1. Puedes agregar más detalles y beneficios aquí.</p>
+      </div>
+    </div>
+
+    <div class="card service-card">
+      <img src="servicio2.jpg" class="card-img-top" alt="Servicio 2">
+      <div class="card-body">
+        <h5 class="card-title">Servicio 2</h5>
+        <p class="card-text">Descripción del Servicio 2. Puedes agregar más detalles y beneficios aquí.</p>
+      </div>
+    </div>
+
+    <div class="card service-card">
+      <img src="servicio3.jpg" class="card-img-top" alt="Servicio 3">
+      <div class="card-body">
+        <h5 class="card-title">Servicio 3</h5>
+        <p class="card-text">Descripción del Servicio 3. Puedes agregar más detalles y beneficios aquí.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Agrega más tarjetas de servicios según sea necesario -->
+
+</div>
+</div>
