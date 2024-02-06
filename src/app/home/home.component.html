@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light " >
       <div class="container">
         <!-- Logo a la izquierda -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" >
           <img src="assets/images/p1.png" alt="Logo" width="100" height="100">
         </a>
     
@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Inicio</a>
+              <a class="nav-link" >Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/servicios">Servicios</a>
@@ -32,8 +32,37 @@
     
         <!-- Imagen de carrito de compras al final -->
         <div class="navbar-text">
-          <img src="assets/images/p2.png" routerLink="/car" alt="Carrito de compras" width="70" height="70">
-        </div>
+ <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="assets/imagenes/car.svg" id="img-carrito" alt="carrito"> 
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let objeto of productosList; let i = index">
+                                        <td><img [src]="objeto.imagen"  width=100 alt="Imagen"></td>
+
+                                        <td>{{ objeto.precio }}</td>
+                                        <td>{{ objeto.titulo }}</td>
+                                        <td>
+                                          <button class="borrar" (click)="eliminarObjeto(i)">x</button>
+                                        </td>
+                                      </tr>
+                                </tbody>
+                            </table>
+                            <a (click)="eliminarTodosLosElementos()" id="vaciar-carrito" class="text-light btn-2  ">Vaciar Carrito</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>        </div>
       </div>
     </nav>
     
@@ -57,7 +86,7 @@
             </div>
             <div class="ofert-txt">
                 <h3>Producto 1</h3>
-                <a href="#" class="btn-2">Informacion</a>
+                <a  data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn-2">Informacion</a>
             </div>
         </div>
         <div class="ofert-1">
@@ -66,7 +95,7 @@
             </div>
             <div class="ofert-txt">
                 <h3>Producto 2</h3>
-                <a href="#" class="btn-2">Informacion</a>
+                <a  data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn-2">Informacion</a>
             </div>
         </div>
         <div class="ofert-1">
@@ -75,74 +104,24 @@
             </div>
             <div class="ofert-txt">
                 <h3>Producto 3</h3>
-                <a href="#" class="btn-2">Informacion</a>
+                <a  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-2">Informacion</a>
             </div>
         </div>
     </section>
 
-    <main class="products container" id="lista-1">
+    <main class="products container row" id="lista-1">
 
         <h2>Productos</h2>
 
-        <div class="product-content"> 
-
-            <div class="product">
-            <img src="assets/imagenes/1.png" alt="">
-            <div class="product-txt">
-                <h3>Elisyum</h3>
-                <p>Calidad Premium</p>
-                <p class="Precio">$200</p>
-                <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
-            </div>
-        </div>
+        <div class=" col-4" *ngFor="let producto of productos"> 
 
         <div class="product">
-            <img src="assets/imagenes/2.png" alt="">
+            <img  [src]="producto.imagen"  alt="">
             <div class="product-txt">
-                <h3>Elisyum</h3>
+                <h3>{{ producto.titulo }}</h3>
                 <p>Calidad Premium</p>
-                <p class="Precio">$200</p>
-                <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al carrito</a>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="assets/imagenes/3.png" alt="">
-            <div class="product-txt">
-                <h3>Elisyum</h3>
-                <p>Calidad Premium</p>
-                <p class="Precio">$200</p>
-                <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al carrito</a>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="assets/imagenes/4.png" alt="">
-            <div class="product-txt">
-                <h3>Elisyum</h3>
-                <p>Calidad Premium</p>
-                <p class="Precio">$200</p>
-                <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="assets/imagenes/5.png" alt="">
-            <div class="product-txt">
-                <h3>Elisyum</h3>
-                <p>Calidad Premium</p>
-                <p class="Precio">$200</p>
-                <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="assets/imagenes/6.png" alt="">
-            <div class="product-txt">
-                <h3>Elisyum</h3>
-                <p>Calidad Premium</p>
-                <p class="Precio">$200</p>
-                <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+                <p class="Precio">${{ producto.precio }}"</p>
+                <a (click)="leerDatosElemento(producto)" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
             </div>
         </div>
 
@@ -232,38 +211,58 @@
             <div class="link">
                 <h3>lorem</h3>
                 <ul>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
                 </ul>
             </div>
             <div class="link">
                 <h3>lorem</h3>
                 <ul>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
                 </ul>
             </div>
             <div class="link">
                 <h3>lorem</h3>
                 <ul>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
                 </ul>
             </div>
             <div class="link">
                 <h3>lorem</h3>
                 <ul>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
+                    <li><a >lorem</a></li>
                 </ul>
             </div>
         </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        
     </footer>

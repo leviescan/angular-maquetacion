@@ -3,4 +3,5 @@ export interface Producto {
     imagen:any;
     titulo:any;
     precio:any;
+
 }
